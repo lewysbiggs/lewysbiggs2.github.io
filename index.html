@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swansea Widening Access to Medicine Society</title>
+    <style>
+        body {
+            font-family: 'Arial, Helvetica, sans-serif';
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            display: grid;
+            grid-template-areas: "header" "nav" "main" "ads" "footer";
+            grid-template-rows: auto auto 1fr auto auto;
+            grid-template-columns: 1fr;
+            min-height: 100vh;
+        }
+
+        header {
+            grid-area: header;
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s; /* Smooth transformation on hover */
+        }
+
+        header:hover {
+            transform: scale(1.02);
+        }
+
+        header img {
+            max-height: 100px;
+            border-radius: 30%; /* Make the image circular */
+            overflow: hidden; /* Hide the overflow to create a circle */
+        }
+
+        header img::after {
+            content: '';
+            display: block;
+            padding-bottom: 100%; /* Maintain aspect ratio for a perfect circle */
+        }
+
+        nav {
+            grid-area: nav;
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1em;
+            display: none; /* Initially hide the navigation */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            padding: 0.5em;
+            border-radius: 5px;
+            transition: background 0.3s; /* Smooth background transition on hover */
+        }
+
+        nav a:hover {
+            background: #34495e;
+        }
+
+        main {
+            grid-area: main;
+            text-align: center;
+            padding: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            background: #ecf0f1;
+            border: 0px solid #bdc3c7;
+            border-radius: 0;
+            margin: 10px 0;
+            padding: 20px;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 1em;
+            font-size: 16px;
+            cursor: pointer;
+            background: #3498db;
+            color: #ecf0f1;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s; /* Smooth background transition on hover */
+        }
+
+        button:hover {
+            background: #2c3e50;
+        }
+
+        footer {
+            grid-area: footer;
+            background: #808080;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+
+        .footer-icons {
+            display: flex;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .footer-icons a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .footer-icons img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        /* Toggle Button Styles */
+      #toggleNavButton {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Change from right: 20px; to left: 20px; */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    padding: 0;
+        }
+
+        #toggleNavButton span {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: #fff;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        #toggleNavButton.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        #toggleNavButton.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        #toggleNavButton.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 768px) {
+            header {
+                padding: 1em;
+            }
+
+            nav {
+                padding: 0.5em;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            main {
+                padding: 1em;
+            }
+
+            section {
+                margin: 5px 0;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+
+            footer {
+                padding: 0.5em;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header onclick="showSection('landingPage')">
+        <img src="WAMS LOGO.jpeg" alt="Company Logo">
+        <h1>Swansea Widening Access to Medicine Society</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="topNav">
+        <ul>
+            <li><a href="#" onclick="showSection('landingPage')">Home</a></li>
+            <li><a href="#" onclick="showSection('applyMentor')">Apply as a Mentor</a></li>
+            <li><a href="#" onclick="showSection('applyMentee')">Apply as a Mentee</a></li>
+            <li><a href="#" onclick="showSection('eventsSection')">Upcoming Events</a></li>
+            <li><a href="#" onclick="showSection('aboutSection')">About Us</a></li>
+            <li><a href="#" onclick="showSection('contactSection')">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Toggle Button -->
+    <button id="toggleNavButton" onclick="toggleNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Main Content -->
+    <main>
+        <section id="landingPage">
+            <h2>Welcome to Our Mentoring Program</h2>
+            <p>Are you an aspiring medic? Or perhaps you're already a student eager to pay it forward? Our peer-to-peer mentoring program is tailored to connect current medical students at Swansea Medical School with those who aspire to join our ranks. Whether you need interview assistance, application proofreading, or simply general guidance, our aim is to nurture hopeful individuals. Click the relevant button below to find out more.</p>
+            <button onclick="showSection('applyMentor')">Apply as a Mentor</button>
+            <button onclick="showSection('applyMentee')">Apply as a Mentee</button>
+        </section>
+
+        <section id="applyMentor" style="display: none;">
+            <h2>Mentor Application</h2>
+	    <p>As a mentor, you will be assigned 1 to 3 aspiring medics (at your discretion) who will be able to contact you via WhatsApp or email.  The WAMS scheme is simply in place to connect mentors and mentees, so it is entirely your prerogative how and when you engage with your mentees.</p>  
+
+<p>We understand you are all busy so we must emphasise <u>there will be no formal commitments</u>. We may offer some resources and guidance to help in your role.  If you are interested and keen to engage with the scheme, please apply below!</p>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSciptgTYTiM1TqaZ4GPVSNebtUCWZrAwPGKfRSXkDPqhoBPmQ/viewform?embedded=true" width="100%" height="757" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </section>
+
+        <section id="applyMentee" style="display: none;">
+            <h2>Mentee Application</h2>
+	    <p> As a mentee you will be preferentially assigned to a medic mentor.  The scheme will match and put you in contact with a current medical student.  From this point on there will be no formal input from WAMS, so it is your prerogative how and when to engage with the mentor.  You can always contact us at WAMS with any queries.</p>
+
+<p> If you are interested apply below!</p>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScmDX4V4nYpxqAcWKcsK9SIk6nwM5NpW4Kihe6IK0Efd7oFkw/viewform?embedded=true" width="100%" height="757" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </section>
+
+        <section id="aboutSection" style="display: none;">
+            <h2>About Us</h2>
+            <p>Swansea WAMS is a student-led society dedicated to assisting aspiring medical students across Wales in various aspects of their applications. Supported by Swansea University Medical School, we maintain a strong partnership with their Admissions Team. Our mission is to provide comprehensive support to future medical professionals, offering guidance and resources tailored to their needs and aspirations..</p>
+<p>In addition to our collaboration with Swansea University Medical School, Swansea WAMS offers a range of valuable resources and opportunities to our members. From mock interviews and personal statement workshops to networking events with healthcare professionals, we strive to equip students with the skills and knowledge necessary for success in their medical school applications. Our inclusive community fosters collaboration and peer support, creating a conducive environment for growth and development among aspiring medical professionals in the local area and beyond.</p>
+        </section>
+
+        <section id="contactSection" style="display: none;">
+            <h2>Contact Us</h2>
+            <form action="https://formspree.io/f/mleqlled" method="POST">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+    
+    <button type="submit">Submit</button>
+  </form>
+        </section>
+
+        <section id="eventsSection" style="display: none;">
+            <h2>Upcoming Events</h2>
+            <p>The Society intends to host sessions throughout the year, including mock interviews, GAMSAT workshops, and more.  Please stay tuned to this page and our <a href="https://www.instagram.com/swanseawams">Instgram</a> for updates on these events.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-icons">
+            <a href="https://www.instagram.com/swanseawams" target="_blank"><img src="instagram-logo.png" alt="Instagram"></a>
+            <a href="https://www.swansea-union.co.uk/activities/society/26834/" target="_blank"><img src="student-union.png" alt="Student Union"></a>
+        </div>
+        <p>Contact us at WAMS@swansea-societies.ac.uk</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function toggleNav() {
+            var nav = document.getElementById('topNav');
+            var toggleButton = document.getElementById('toggleNavButton');
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+                toggleButton.classList.remove('open');
+            } else {
+                nav.style.display = 'block';
+                toggleButton.classList.add('open');
+            }
+        }
+    </script>
+</body>
+
+</html>
