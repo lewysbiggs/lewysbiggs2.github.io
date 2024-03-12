@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -141,20 +141,20 @@
         }
 
         /* Toggle Button Styles */
-      #toggleNavButton {
-    position: fixed;
-    top: 20px;
-    left: 20px; /* Change from right: 20px; to left: 20px; */
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 24px;
-    padding: 0;
+        #toggleNavButton {
+            position: fixed;
+            top: 20px;
+            left: 20px; /* Change from right: 20px; to left: 20px; */
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 24px;
+            padding: 0;
         }
 
         #toggleNavButton span {
@@ -175,6 +175,14 @@
 
         #toggleNavButton.open span:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Committee Photo Styles */
+        .committee-photo {
+            max-width: 100px; /* Adjust the maximum width as needed */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 50%; /* Make the image circular */
+            margin-bottom: 10px; /* Add some spacing between the photos */
         }
 
         /* Responsive Styles */
@@ -208,7 +216,6 @@
                 padding: 0.5em;
             }
         }
-
     </style>
 </head>
 
@@ -226,7 +233,7 @@
             <li><a href="#" onclick="showSection('applyMentor')">Apply as a Mentor</a></li>
             <li><a href="#" onclick="showSection('applyMentee')">Apply as a Mentee</a></li>
             <li><a href="#" onclick="showSection('eventsSection')">Upcoming Events</a></li>
-            <li><a href="#" onclick="showSection('aboutSection')">About Us</a></li>
+            <li><a href="#" onclick="showSection('aboutSection')">The Committee</a></li>
             <li><a href="#" onclick="showSection('contactSection')">Contact Us</a></li>
         </ul>
     </nav>
@@ -241,7 +248,8 @@
     <!-- Main Content -->
     <main>
         <section id="landingPage">
-            <h2>Welcome to Our Mentoring Program</h2>
+            <p style="font-size: 20px;">Swansea WAMS is a student-led society dedicated to supporting aspiring medical students across Wales. In collaboration with Swansea University Medical School, we offer tailored guidance and resources, including mock interviews, workshops, and networking events. Our inclusive community fosters collaboration and peer support for aspiring medical professionals, seeking their growth and success.</p>
+            <h2>Our Mentoring Program</h2>
             <p>Are you an aspiring medic? Or perhaps you're already a student eager to pay it forward? Our peer-to-peer mentoring program is tailored to connect current medical students at Swansea Medical School with those who aspire to join our ranks. Whether you need interview assistance, application proofreading, or simply general guidance, our aim is to nurture hopeful individuals. Click the relevant button below to find out more.</p>
             <button onclick="showSection('applyMentor')">Apply as a Mentor</button>
             <button onclick="showSection('applyMentee')">Apply as a Mentee</button>
@@ -249,45 +257,73 @@
 
         <section id="applyMentor" style="display: none;">
             <h2>Mentor Application</h2>
-	    <p>As a mentor, you will be assigned 1 to 3 aspiring medics (at your discretion) who will be able to contact you via WhatsApp or email.  The WAMS scheme is simply in place to connect mentors and mentees, so it is entirely your prerogative how and when you engage with your mentees.</p>  
-
-<p>We understand you are all busy so we must emphasise <u>there will be no formal commitments</u>. We may offer some resources and guidance to help in your role.  If you are interested and keen to engage with the scheme, please apply below!</p>
+            <p>As a mentor, you will be assigned 1 to 3 aspiring medics (at your discretion) who will be able to contact you via WhatsApp or email.  The WAMS scheme is simply in place to connect mentors and mentees, so it is entirely your prerogative how and when you engage with your mentees.</p>
+            <p>We understand you are all busy so we must emphasize <u>there will be no formal commitments</u>. We may offer some resources and guidance to help in your role.  If you are interested and keen to engage with the scheme, please apply below!</p>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSciptgTYTiM1TqaZ4GPVSNebtUCWZrAwPGKfRSXkDPqhoBPmQ/viewform?embedded=true" width="100%" height="757" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </section>
 
         <section id="applyMentee" style="display: none;">
             <h2>Mentee Application</h2>
-	    <p> As a mentee you will be preferentially assigned to a medic mentor.  The scheme will match and put you in contact with a current medical student.  From this point on there will be no formal input from WAMS, so it is your prerogative how and when to engage with the mentor.  You can always contact us at WAMS with any queries.</p>
-
-<p> If you are interested apply below!</p>
+            <p> As a mentee you will be preferentially assigned to a medic mentor.  The scheme will match and put you in contact with a current medical student.  From this point on there will be no formal input from WAMS, so it is your prerogative how and when to engage with the mentor.  You can always contact us at WAMS with any queries.</p>
+            <p> If you are interested apply below!</p>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScmDX4V4nYpxqAcWKcsK9SIk6nwM5NpW4Kihe6IK0Efd7oFkw/viewform?embedded=true" width="100%" height="757" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </section>
 
         <section id="aboutSection" style="display: none;">
-            <h2>About Us</h2>
-            <p>Swansea WAMS is a student-led society dedicated to assisting aspiring medical students across Wales in various aspects of their applications. Supported by Swansea University Medical School, we maintain a strong partnership with their Admissions Team. Our mission is to provide comprehensive support to future medical professionals, offering guidance and resources tailored to their needs and aspirations..</p>
-<p>In addition to our collaboration with Swansea University Medical School, Swansea WAMS offers a range of valuable resources and opportunities to our members. From mock interviews and personal statement workshops to networking events with healthcare professionals, we strive to equip students with the skills and knowledge necessary for success in their medical school applications. Our inclusive community fosters collaboration and peer support, creating a conducive environment for growth and development among aspiring medical professionals in the local area and beyond.</p>
+            <h2>The Committee</h2>
+            <div class="committee-container">
+                <div class="committee-member">
+                    <img src="placeholder.jpg" alt="Placeholder" class="committee-photo">
+                    <h3>Lewys Biggs</h3>
+                    <p>President</p>
+                </div>
+                <div class="committee-member">
+                    <img src="placeholder.jpg" alt="Placeholder" class="committee-photo">
+                    <h3>George Newton</h3>
+                    <p>Vice President and Communications</p>
+                </div>
+                <div class="committee-member">
+                    <img src="placeholder.jpg" alt="Placeholder" class="committee-photo">
+                    <h3>Llewelyn Millar-Jones</h3>
+                    <p>GAMSAT Lead</p>
+                </div>
+                <div class="committee-member">
+                    <img src="placeholder.jpg" alt="Placeholder" class="committee-photo">
+                    <h3>Rebecca Muse</h3>
+                    <p>Mentoring Lead</p>
+                </div>
+                <div class="committee-member">
+                    <img src="placeholder.jpg" alt="Placeholder" class="committee-photo">
+                    <h3>William Tam</h3>
+                    <p>Interview Lead</p>
+                </div>
+                <div class="committee-member">
+                    <img src="placeholder.jpg" alt="Placeholder" class="committee-photo">
+                    <h3>Lucy Hallett</h3>
+                    <p>Social Media Lead</p>
+                </div>
+            </div>
         </section>
 
         <section id="contactSection" style="display: none;">
             <h2>Contact Us</h2>
             <form action="https://formspree.io/f/mleqlled" method="POST">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
-    
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
-    
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="4" required></textarea><br><br>
-    
-    <button type="submit">Submit</button>
-  </form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
         </section>
 
         <section id="eventsSection" style="display: none;">
             <h2>Upcoming Events</h2>
-            <p>The Society intends to host sessions throughout the year, including mock interviews, GAMSAT workshops, and more.  Please stay tuned to this page and our <a href="https://www.instagram.com/swanseawams">Instgram</a> for updates on these events.</p>
+            <p>The Society intends to host sessions throughout the year, including mock interviews, GAMSAT workshops, and more.  Please stay tuned to this page and our <a href="https://www.instagram.com/swanseawams">Instagram</a> for updates on these events.</p>
         </section>
     </main>
 
